@@ -50,6 +50,8 @@ const obj = utils.obj, // obj( { foo : 'foo' , bar : 'bar' } ) -> { properties :
 | `utils`      | `obj({obj})` | Create object with properties/valus arrays from object|
 | `view`      | `element(str)` | Get DOM element |
 | `view`      | `set(parent,content)` | Set DOM element |
+| `view`      | `add(parent,content)` | Add DOM element |
 | `controller`      | `add(element,action,function)` | Add event handler to element |
 | `application`      | `call(functionName)` | Create application call |
 | `application`      | `before(functionName, function)` | Add before to application call |
+| `application`      | `hook(functionName, function)` | Add hook to application call |
