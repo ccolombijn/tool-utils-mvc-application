@@ -39,7 +39,8 @@ When `index.html#myAppModule` is called `myApp.MyAppModule` will be executed.
 Add by peference the following lines to your code to make shorthand references to `tool, utils, model, view, controller` & `application`
 
 ```javascript
-const make = tool.make, // make( [ 'div', { id : 'newElementId' }, 'content of element' ]
+const make = tool.make, // make( [ 'div', { id : 'newElementId' }, 'content of element' ] -> <div id="newElementId">content of element</div>
+const obj = utils.obj, // obj( { foo : 'foo' , bar : 'bar' } ) -> { properties : [ foo, bar ], values : [ 'foo', 'bar' ] }
 ```
 
 
