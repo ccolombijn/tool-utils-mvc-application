@@ -80,6 +80,7 @@ Which will add more menu items (because the added modules have a `label` propert
 ```javascript
 const call = application.call;
 const hook = application.hook;
+const before = application.before;
 const overview = (args) => call('UI','overviewTable',args);
 hook( 'UI', 'overviewTable' , () => {
     // hook function to any call instance of UI.overviewTable
