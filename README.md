@@ -74,6 +74,39 @@ application.init( myApp )
 ```
 Which will add more menu items (because the added modules have a `label` property and are returned by `myApp`) like `myAppModule`, `index.html#mySecondModule` will execute `myApp.mAppSecondModule` and so on.
 
+## Adding `api` and `components` to `config`
+ ```javascript
+ const myApp = function(){
+  const config = {
+    main : '#myAppMain',
+    menu : '#myAppMenu',
+    default : 'myAppModule',
+    api : 'localhost:8081/api',
+    components : [
+      { endpoint : 'products' },
+      { endpoint : 'categories' }
+     ]
+   }
+   const myAppModule = function(){
+    console.log('this is myAppModule')
+    return {
+      label : 'My App Module'
+    }
+   }
+   return {
+    config : config,
+    myAppModule : myAppModule
+   }
+}
+ ```
+## Adding `application.model` to your application
+
+`model` comprehends all data, gets it from a source like a database, and makes available to your application;
+ ```javascript
+ const data = model.data
+ const get = model.get
+ ```
+
 ## Using `UI` with `application.call`
 `UI` is a Component library for ready-to-use interface elements, like forms, tables and other elements visible to the end user. `application.call` stores a component from a library like `UI` for later use, and to attach `application.before` (is executed before attached function is executed) and `application.hook` (is executed after attached function is executed) to this call. You can use `call`, `hook` and before for any function you added to your application.
 
@@ -102,7 +135,6 @@ before( overview , () => {
   console.log('overview call before')
 });
 ```
-
 ## Adding Tools, Utilities & MVC
 
 Add by peference the following lines to your code to make shorthand references to `tool, utils, model, view, controller` & `application`
