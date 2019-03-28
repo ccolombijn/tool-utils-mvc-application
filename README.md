@@ -34,6 +34,46 @@ Because 'myAppModule'is defined as default in config, myAppModule will be execut
 Because myAppModule is returned by `MyApp`, and has a `label` property, a menu item link (links to '#myAppModule') with as text the value of `myAppModule.label`, is added to the element with the id in the `menu` property of `myApp.config`.
 When `index.html#myAppModule` is called `myApp.MyAppModule` will be executed.
 
+## Adding more modules
+Like `myAppModule` you could add as many modules as ar needed;
+
+```javascript
+const myApp = function(){
+  const config = {
+    main : '#myAppMain',
+    menu : '#myAppMenu',
+    default : 'myAppModule'
+   }
+   const myAppModule = function(){
+    console.log('this is myAppModule')
+    return {
+      label : 'My App Module'
+    }
+   }
+   const myAppSecondModule = function(){
+    console.log('this is myAppSecondModule')
+    return {
+      label : 'My App 2nd Module'
+    }
+   }
+   const myAppThirdModule = function(){
+    console.log('this is myAppThirdModule')
+    return {
+      label : 'My App 3rd Module'
+    }
+   }
+   return {
+    config : config,
+    myAppModule : myAppModule,
+    myAppSecondModule : myAppSecondModule,
+    myAppThirdModule : myAppThirdModule
+   }
+}
+
+application.init( myApp )
+```
+Which will add more menu items (because the added modules have a `label` property) corresponding to the modules `myApp` returns.
+
 ## Adding Tools, Utilities & MVC
 
 Add by peference the following lines to your code to make shorthand references to `tool, utils, model, view, controller` & `application`
