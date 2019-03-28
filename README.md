@@ -78,7 +78,8 @@ Which will add more menu items (because the added modules have a `label` propert
 `UI` is a Component library for ready-to-use interface elements, like forms, tables and other elemnts visible to the end user. `application.call` stores a component from a library like `UI` for later use, and to attach `application.before` and `application.hook`  to this call.
 
 ```javascript
-const call = application.call
+const call = application.call;
+const hook = application.hook;
 const overview = (args) => call('UI','overviewTable',args);
 hook( 'UI', 'overviewTable' , () => {
     // hook function to any call instance of UI.overviewTable
