@@ -75,7 +75,7 @@ application.init( myApp )
 Which will add more menu items (because the added modules have a `label` property and are returned by `myApp`) like `myAppModule`, `index.html#mySecondModule` will execute `myApp.mAppSecondModule` and so on.
 
 ## Using `UI` with `application.call`
-`UI` is a Component library for ready-to-use interface elements, like forms, tables and other elemnts visible to the end user. `application.call` stores a component from a library like `UI` for later use, and to attach `application.before` and `application.hook`  to this call.
+`UI` is a Component library for ready-to-use interface elements, like forms, tables and other elements visible to the end user. `application.call` stores a component from a library like `UI` for later use, and to attach `application.before` and `application.hook`  to this call.
 
 ```javascript
 const call = application.call;
@@ -90,6 +90,16 @@ hook( 'UI', 'overviewTable' , () => {
 before( 'UI', 'overviewTable' , () => {
   // before function to any call instance of UI.overviewTable
   console.log('UI.overviewTable call before')
+});
+
+hook( overview , () => {
+    // hook function to overview instance of UI.overviewTable
+    console.log('overview call hook')
+});
+
+before( overview , () => {
+  // before function to any call instance of UI.overviewTable
+  console.log('overview call before')
 });
 ```
 
