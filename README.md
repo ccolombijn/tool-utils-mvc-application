@@ -1,7 +1,7 @@
 # tool-utils-mvc-application
 ### Tool / Utilities / UI / MVC / Application Framework &amp; Library
 ## Intro
-This library & framework facilitates a module UI, MVC & routing structure with additional tools & utitlities.
+Facilitates a module routing structure with additional library for UI, MVC, tools & utitlities.
 ## Getting started
 Assuming you have a folder `application` containing `index.html`, 
 which loads all the files in `/assets/` (`tool.js, utils.js, model.js, controller.js, view.js, ui.js` & `application.js`); 
